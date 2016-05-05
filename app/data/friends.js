@@ -6,8 +6,8 @@ var friends = [
   scores: [2, 3, 4, 5, 3, 2, 1, 2, 3, 5]
 },
 {
-  name: 'Donald',
-  photo: 'http://c1.nrostatic.com/sites/default/files/uploaded/donald-trump-incapable-of-embarrassment-r_0.jpg',
+  name: 'Mickey',
+  photo: '../../../public/assets/images/mickeyMouse.jpg',
   scores: [1, 1, 2, 3, 1, 4, 5, 2, 3, 1]
 },
 {

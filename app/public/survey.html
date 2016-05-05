@@ -23,12 +23,11 @@
 		<h3><strong>About You</strong></h3>
 		<h4>Name (Required)</h4>
 		<input type="text" name="" id="name" class="form-control" required >
-
 		<h4>Link to Photo Image (Required)</h4>
 		<input type="text" name="" id="photo" class="form-control" required >
 		<hr>
 		<h3><strong>Question 1</strong></h3>
-		<h4>You love to sit and watch tv instead of going out.</h4>
+		<h4>You love to sit and watch TV instead of going out.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q1">
 	 		<option value=""></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -37,7 +36,6 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
-
 		<h3><strong>Question 2</strong></h3>
 		<h4>You love to go out instead of staying in.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q2">
@@ -48,7 +46,6 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
-
 		<h3><strong>Question 3</strong></h3>
 		<h4>You are a calm and relaxed type of person.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q3">
@@ -59,7 +56,6 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
-
 		<h3><strong>Question 4</strong></h3>
 		<h4>You are very stressed and need a vacation.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q4">
@@ -70,7 +66,6 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
-
 		<h3><strong>Question 5</strong></h3>
 		<h4>Large crowds of people excite you.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q5">
@@ -81,7 +76,6 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
-
 		<h3><strong>Question 6</strong></h3>
 		<h4>People can easily upset you.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q6">
@@ -92,7 +86,6 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
-
 		<h3><strong>Question 7</strong></h3>
 		<h4>Sometimes you just get up and travel.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q7">
@@ -103,7 +96,6 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
-
 		<h3><strong>Question 8</strong></h3>
 		<h4>You love city life.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q8">
@@ -114,7 +106,6 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
-
 		<h3><strong>Question 9</strong></h3>
 		<h4>You love the suburbs.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q9">
@@ -125,7 +116,6 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
-
 		<h3><strong>Question 10</strong></h3>
 		<h4>The more kids the merrier.</h4>
 	 	<select data-placeholder="" class="chosen-select" id="q10">
@@ -136,12 +126,9 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
       	</select>
-
-		<br>
-		<br>
-
+      	<br><br>
 		<!-- Submit Button -->
-		<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
+		<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit</button>
 		<hr>
 	    <footer class="footer">
 	      <div class="container">
@@ -168,8 +155,12 @@
 	    </div>
 	  </div>
 	</div>
-	
+
 	<script type="text/javascript">
+
+
+
+
 		var config = {
 		    '.chosen-select': {},
 		    '.chosen-select-deselect': {
@@ -209,7 +200,10 @@
 		            photo: $("#photo").val(),
 		            scores: [parseInt($("#q1").val()), parseInt($("#q2").val()), parseInt($("#q3").val()), parseInt($("#q4").val()), parseInt($("#q5").val()), parseInt($("#q6").val()), parseInt($("#q7").val()), parseInt($("#q8").val()), parseInt($("#q9").val()), parseInt($("#q10").val()), ]
 		        }
-		        $.get("http://localhost:8080/api/friends", userData, function(data) {    	
+
+		        var directoryName = "http://localhost:8080";
+
+		        $.get(directoryName + "/api/friends", userData, function(data) {    	
 		            var inputArr = [];
 		            var inputScore = userData.scores;
 		            for (i = 0; i < inputScore.length; i++) {
@@ -220,7 +214,7 @@
 		            function add(a, b) {
 		                return a + b;
 		            };
-		            var pickOne = [];
+		            var yourMatch = [];
 		            for (x in data) {
 		                var r = [];
 		                for (i in data[x].scores) {
@@ -232,7 +226,7 @@
 		                    return a + b;
 		                } 
 		                if (Math.abs(inputSum - sum) <= 6) {
-		                	pickOne.push(data[x]);
+		                	yourMatch.push(data[x]);
 		                    data.push(userData);
 		                }
 		                else{
@@ -240,19 +234,18 @@
 		           		 }
 		            }; 
 					function showMatch(){
-						var name = JSON.stringify(pickOne[0].name);
-						var photo = pickOne[0].photo;
+						var name = JSON.stringify(yourMatch[0].name);
+						var photo = yourMatch[0].photo;
 						$("#matchName").text(name);
 						$('#matchImg').attr("src", photo);
 						$("#resultsModal").modal('toggle');	
 					};
 					showMatch();
-
-		        });//end get
+		        });
 		    } else {
 		        alert("You did not fill out all the fields in the form.");
 		    }
-		    $.post("http://localhost:8080/api/friends", userData, function(data){
+		    $.post(directoryName + "/api/friends", userData, function(data){
 		    	data.push(userData);
 		    });            
 		    $('#close').on('click', function() {
