@@ -1,1 +1,1 @@
-<?php include_once("app/public/assets/home.html");?>
+<?php include_once("/app/public/assets/home.html");?>
