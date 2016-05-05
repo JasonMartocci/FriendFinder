@@ -1,18 +1,18 @@
 var friends = [
 
 {
-  name: 'Billy',
-  photo: 'http://www.peta.org/wp-content/uploads/2016/02/Goats-maximili-602x403.jpg',
-  scores: [2, 3, 4, 5, 3, 2, 1, 2, 3, 5]
+  name: 'Donald',
+  photo: 'https://cdn.shopify.com/s/files/1/0249/7876/files/donaldDuck.jpg?10315918050191895659',
+  scores: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 },
 {
   name: 'Mickey',
-  photo: '../../../public/assets/images/mickeyMouse.jpg',
+  photo: 'https://cdn.shopify.com/s/files/1/0249/7876/files/mickeyMouse_734d63f4-9461-478d-9441-b4efa020bb23.jpg?10315918050191895659',
   scores: [1, 1, 2, 3, 1, 4, 5, 2, 3, 1]
 },
 {
-  name: 'Bernie',
-  photo: 'https://01.img.society6.com/society6/img/nQs0Oq4hVzuNFynfZJQMX-7v9Bs/w_700/artwork/~artwork/s6-0066/a/27326061_9971749/~~/bernie-and-kittens-prints.jpg',
+  name: 'Minnie',
+  photo: 'https://cdn.shopify.com/s/files/1/0249/7876/files/minnieMouse.jpg?10315918050191895659',
   scores: [4, 5, 4, 2, 3, 4, 3, 5, 3, 4]
 }
 
